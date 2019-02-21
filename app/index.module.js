@@ -1,6 +1,6 @@
-// import angular from 'angular'
+import angular from 'angular'
 // const angular = require('angular')
-angular.module('app', [])
+export default angular.module('app', [])
     .controller('AppController', AppController);
 
 AppController.$inject = ['$scope'];

@@ -1,4 +1,4 @@
-
+import angular from './index.module'
 
 describe('main app module', function() {
     var ctrl, scope;
