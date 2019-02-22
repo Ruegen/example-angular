@@ -1,6 +1,6 @@
-import angular from 'angular'
-// const angular = require('angular')
-export default angular.module('app', [])
+import uiRouter from "angular-ui-router"
+
+export default angular.module('app', ['ui.router',uiRouter])
     .controller('AppController', AppController);
 
 AppController.$inject = ['$scope'];
@@ -16,3 +16,4 @@ function AppController($scope) {
         vm.counter += 1
     }
 }
+

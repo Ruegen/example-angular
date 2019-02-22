@@ -36,7 +36,7 @@ module.exports = function(grunt) {
 
   // Load the plugin that provides the "uglify" task.
   grunt.loadNpmTasks('grunt-contrib-uglify');
-  grunt.loadNpmTasks('grunt-webpack');
+  // grunt.loadNpmTasks('grunt-webpack');
 
   
   // load plugin for testing

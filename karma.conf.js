@@ -1,7 +1,7 @@
 // Karma configuration
 // Generated on Tue Feb 19 2019 20:44:12 GMT+1000 (GMT+10:00)
 const path = require('path')
-const webpackConfig = require(path.resolve(__dirname, "webpack.config.js"));
+// const webpackConfig = require(path.resolve(__dirname, "webpack.config.js"));
 
 module.exports = function(config) {
   config.set({
@@ -14,12 +14,14 @@ module.exports = function(config) {
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
     frameworks: ['jasmine'],
 
+    preprocessors: {
+      'app/index.module.js': ['webpack'],
+      'app/index.module.spec.js': ['webpack']
+    },
 
     // list of files / patterns to load in the browser
     files: [
-      'bower_components/angular/angular.js',
-      'bower_components/angular-mocks/angular-mocks.js',
-      'app/index.module.js',
+      // 'app/index.module.js',
       'app/index.module.spec.js'
     ],
 
@@ -28,15 +30,29 @@ module.exports = function(config) {
     exclude: [
     ],
 
-    webpack: webpackConfig,
+    webpack: {
+      mode: 'development',
+      module: {
+          rules: [
+            {
+              test: /\.m?js$/,
+              exclude: /(node_modules|bower_components)/,
+              use: {
+                loader: 'babel-loader',
+                options: {
+                  presets: ['@babel/preset-env']
+                }
+              }
+            }
+          ]
+        },
+        watch: true
+    },
 
 
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
-    preprocessors: {
-      'C:/Users/ruegen/apps/javascript/example-angularjs/app/index.module.js': ['webpack', 'sourcemap'],
-      'C:/Users/ruegen/apps/javascript/example-angularjs/app/index.module.spec.js': ['webpack', 'sourcemap']
-    },
+   
 
 
     // test results reporter to use
@@ -70,6 +86,13 @@ module.exports = function(config) {
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
     singleRun: false,
+
+    plugins: [
+      'karma-webpack',
+      'karma-phantomjs-launcher',
+      'karma-jasmine',
+    ],
+
 
     // Concurrency level
     // how many browser should be started simultaneous

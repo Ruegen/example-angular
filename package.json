@@ -13,6 +13,7 @@
   "devDependencies": {
     "@babel/core": "^7.3.3",
     "@babel/preset-env": "^7.3.1",
+    "angular-mocks": "^1.7.7",
     "babel-loader": "^8.0.5",
     "babel-preset-env": "^1.7.0",
     "bower": "^1.8.8",
@@ -36,7 +37,9 @@
     "webpack-dev-server": "^3.2.0"
   },
   "dependencies": {
+    "@uirouter/angularjs": "^1.0.22",
     "angular": "^1.7.7",
+    "angular-ui-router": "^1.0.20",
     "karma-webpack": "^3.0.5"
   }
 }
