@@ -15,14 +15,14 @@ module.exports = function(config) {
     frameworks: ['jasmine'],
 
     preprocessors: {
-      'app/index.module.js': ['webpack'],
-      'app/index.module.spec.js': ['webpack']
+      'app/index.module.spec.js': ['webpack'],
+      'app/shellModule/shellModule.module.spec.js': ['webpack'],
     },
 
     // list of files / patterns to load in the browser
     files: [
-      // 'app/index.module.js',
-      'app/index.module.spec.js'
+      'app/index.module.spec.js',
+      'app/shellModule/shellModule.module.spec.js',
     ],
 
 
