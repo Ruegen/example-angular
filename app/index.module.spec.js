@@ -3,6 +3,7 @@ import angular from "angular"
 import "angular-mocks"
 import "./index.module"
 
+
 describe('main app module', function() {
     var ctrl, scope;
     beforeEach(angular.mock.module('app'))
