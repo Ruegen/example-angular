@@ -43,6 +43,15 @@ module.exports = function(config) {
                   presets: ['@babel/preset-env']
                 }
               }
+            },
+            {
+              test: /\.(html)$/,
+              use: {
+                loader: 'html-loader',
+                options: {
+                  attrs: [':data-src']
+                }
+              }
             }
           ]
         },

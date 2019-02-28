@@ -9,8 +9,10 @@
 <body>
     <div ng-app="app">
         <div ng-controller="AppController as vm">
+            {{vm.choice}}
                 <button ng-click="vm.increment()">Increment</button>
                 {{ vm.counter }}
+                <drop-down options="vm.fruit" handle-change="vm.updateChoice"></drop-down>
         </div>
     </div>
 </body>

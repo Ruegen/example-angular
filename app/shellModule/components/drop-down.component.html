@@ -1,0 +1,6 @@
+<select ng-click="event = $event" class="form-control" ng-change="vm.handleChange(event, vm.option)" ng-model="vm.option">
+    <option 
+        ng-repeat="option in vm.options track by $index" 
+        ng-value="option"
+    >{{option.label}}</option>
+</select>
