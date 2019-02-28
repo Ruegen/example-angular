@@ -1,5 +1,6 @@
 import uiRouter from "angular-ui-router"
 import ocLazyLoad from "oclazyload"
+import datatables from'angular-datatables'
 import './shellModule/shellModule.module'
 
 export default angular.module('app', [
@@ -7,13 +8,15 @@ export default angular.module('app', [
     uiRouter, 
     'oc.lazyLoad',
     ocLazyLoad,
-    'shellModule'
+    'datatables',
+    datatables,
+    'shellModule',
 ])
 .controller('AppController', AppController);
 
-AppController.$inject = ['$scope', '$rootScope', '$log'];
+AppController.$inject = ['$scope', '$rootScope', 'DTOptionsBuilder', 'DTColumnBuilder', '$log'];
 
-function AppController($scope, $rootScope, $log) {
+function AppController($scope, $rootScope, DTOptionsBuilder, DTColumnBuilder, $log) {
     const vm = this;
     vm.hello = "hello world!"
     vm.counter = 0
@@ -29,6 +32,32 @@ function AppController($scope, $rootScope, $log) {
         {label: 'bannana', value: 'bannana'},
         {label: 'orange', value: 'orange'},
     ]
+
+
+    vm.tableData = [
+        {first_name: 'John', last_name: 'Appleseed'},
+        {first_name: 'Sylvester', last_name: 'Stallone'}
+    ]
+
+    vm.columnHeaders = [
+        'First Name',
+        'Last Name'
+    ]
+
+    
+    vm.dtColumnsDefs = [
+        DTColumnBuilder.newColumn('first_name').withTitle("First Name"),
+        DTColumnBuilder.newColumn('last_name').withTitle("Last Name"),
+    ]
+ 
+    vm.dtOptions = DTOptionsBuilder.newOptions()
+ 
+    vm.tableRows = function() {
+        return vm.tableData.map(row => {
+            return Object.keys(row).map(k => row[k])
+        })
+    }
+
 
     function increment() {
         vm.counter += 1

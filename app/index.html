@@ -4,6 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script
+    src="https://code.jquery.com/jquery-2.2.4.min.js"
+    integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+    crossorigin="anonymous"></script>
+    <script src=".min.css"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.1.0/js/dataTables.responsive.min.js">
+    <link rel="stylesheet" href="angular-datatables.css">
     <title><%= htmlWebpackPlugin.options.title %></title>
 </head>
 <body>
@@ -13,7 +21,35 @@
                 <button ng-click="vm.increment()">Increment</button>
                 {{ vm.counter }}
                 <drop-down options="vm.fruit" handle-change="vm.updateChoice"></drop-down>
-        </div>
+        <table datatable="ng" class="row-border hover">
+            <thead>
+            <tr>
+                <th ng-repeat="header in vm.columnHeaders">{{header}}</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="person in vm.tableData">
+                <td>{{ person.first_name }}</td>
+                <td>{{ person.last_name }}</td>
+            </tr>
+            </tbody>
+        </table>
+<hr>
+        <table datatable="ng" class="row-border hover">
+            <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="person in vm.tableData">
+                <td>{{ person.first_name }}</td>
+                <td>{{ person.last_name }}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
     </div>
 </body>
 </html>
