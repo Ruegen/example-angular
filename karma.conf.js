@@ -17,12 +17,14 @@ module.exports = function(config) {
     preprocessors: {
       'app/index.module.spec.js': ['webpack'],
       'app/shellModule/shellModule.module.spec.js': ['webpack'],
+      'app/shellModule/components/drop-down.component.spec.js': ['webpack']
     },
 
     // list of files / patterns to load in the browser
     files: [
       'app/index.module.spec.js',
       'app/shellModule/shellModule.module.spec.js',
+      'app/shellModule/components/drop-down.component.spec.js'
     ],
 
 
