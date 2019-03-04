@@ -6,6 +6,10 @@ import angularTouch from 'angular-touch'
 import uiBootstrap from 'angular-ui-bootstrap'
 import './shellModule/shellModule.module'
 
+// css
+import 'style-loader!css-loader!./angular-datatables.css'
+import 'style-loader!css-loader!./ui-bootstrap-csp.css'
+
 export default angular.module('app', [
     'ui.router',
     uiRouter, 

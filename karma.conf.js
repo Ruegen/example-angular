@@ -17,19 +17,20 @@ module.exports = function(config) {
     preprocessors: {
       'app/index.module.spec.js': ['webpack'],
       'app/shellModule/shellModule.module.spec.js': ['webpack'],
-      'app/shellModule/components/drop-down.component.spec.js': ['webpack']
+      'app/shellModule/components/drop-down.component.spec.js': ['webpack'],
+      // 'app/shellModule/components/pop-up.component.spec.js': ['webpack']
     },
 
     // list of files / patterns to load in the browser
     files: [
-      
       'node_modules/jquery/dist/jquery.js',
       'https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js',
       'https://cdn.datatables.net/responsive/2.1.0/js/dataTables.responsive.min.js',
       'app/index.html',
       'app/index.module.spec.js',
       'app/shellModule/shellModule.module.spec.js',
-      'app/shellModule/components/drop-down.component.spec.js'
+      'app/shellModule/components/drop-down.component.spec.js',
+      // 'app/shellModule/components/pop-up.component.spec.js'
     ],
 
 
@@ -59,7 +60,11 @@ module.exports = function(config) {
                   attrs: [':data-src']
                 }
               }
-            }
+            },
+            {
+              test: /\.css$/,
+              use: ['style-loader', 'css-loader'],
+            },
           ]
         },
         watch: true

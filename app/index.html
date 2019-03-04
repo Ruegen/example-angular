@@ -8,14 +8,20 @@
     src="https://code.jquery.com/jquery-2.2.4.min.js"
     integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
     crossorigin="anonymous"></script>
-    <script src=".min.css"></script>
     <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
     <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.1.0/js/dataTables.responsive.min.js">
-    <link rel="stylesheet" href="angular-datatables.css">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.18/css/jquery.dataTables.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <title><%= htmlWebpackPlugin.options.title %></title>
 </head>
 <body>
     <div ng-app="app">
+
+        <div ng-controller="shellController as vm">
+            
+        </div>
+
         <div ng-controller="AppController as vm">
             {{vm.choice}}
                 <button ng-click="vm.increment()">Increment</button>
