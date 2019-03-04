@@ -22,6 +22,11 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
+      
+      'node_modules/jquery/dist/jquery.js',
+      'https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js',
+      'https://cdn.datatables.net/responsive/2.1.0/js/dataTables.responsive.min.js',
+      'app/index.html',
       'app/index.module.spec.js',
       'app/shellModule/shellModule.module.spec.js',
       'app/shellModule/components/drop-down.component.spec.js'
