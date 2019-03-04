@@ -1,6 +1,9 @@
 import uiRouter from "angular-ui-router"
 import ocLazyLoad from "oclazyload"
-import datatables from'angular-datatables'
+import datatables from 'angular-datatables'
+import angularAnimate from 'angular-animate'
+import angularTouch from 'angular-touch'
+import uiBootstrap from 'angular-ui-bootstrap'
 import './shellModule/shellModule.module'
 
 export default angular.module('app', [
@@ -11,8 +14,14 @@ export default angular.module('app', [
     'datatables',
     datatables,
     'shellModule',
+    'ngAnimate',
+    angularAnimate,
+    'ngTouch',
+    angularTouch,
+    'ui.bootstrap',
+    uiBootstrap
 ])
-.controller('AppController', AppController);
+.controller('AppController', AppController)
 
 AppController.$inject = ['$scope', '$rootScope', 'DTOptionsBuilder', 'DTColumnBuilder', '$log'];
 

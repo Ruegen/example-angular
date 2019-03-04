@@ -2,6 +2,7 @@
 const {module} = angular.mock
 const {inject} = angular.mock
 
+
 describe('test module', function() {
     var ctrl, scope;
     beforeEach(module('app'))
