@@ -5,6 +5,7 @@ import angularAnimate from 'angular-animate'
 import angularTouch from 'angular-touch'
 import uiBootstrap from 'angular-ui-bootstrap'
 import shellModule from './shell/shell.module'
+import guiModule from './gui/gui.module'
 
 // css
 import css from './ui-bootstrap-csp.css'
@@ -24,17 +25,23 @@ export default angular.module('app', [
     'ngTouch',
     angularTouch,
     'ui.bootstrap',
-    uiBootstrap
+    uiBootstrap,
+    'guiModule',
+    guiModule.name
 ])
 .controller('AppController', AppController)
 
-AppController.$inject = ['$scope', '$rootScope', 'DTOptionsBuilder', 'DTColumnBuilder', '$log'];
+AppController.$inject = ['$timeout','$scope', '$rootScope', 'DTOptionsBuilder', 'DTColumnBuilder', '$log'];
 
-function AppController($scope, $rootScope, DTOptionsBuilder, DTColumnBuilder, $log) {
+function AppController($timeout, $scope, $rootScope, DTOptionsBuilder, DTColumnBuilder, $log) {
     const vm = this;
     vm.hello = "hello world!"
     vm.counter = 0
     vm.increment = increment
+
+
+    
+
 
     vm.choice = ''
     vm.updateChoice = function($event, option) {
@@ -42,10 +49,14 @@ function AppController($scope, $rootScope, DTOptionsBuilder, DTColumnBuilder, $l
     }
 
     vm.fruit = [
-        {label: 'apple', value: 'apple'},
-        {label: 'bannana', value: 'bannana'},
-        {label: 'orange', value: 'orange'},
+        {text: 'apple', value: 'apple'},
+        {text: 'bannana', value: 'bannana'},
+        {text: 'orange', value: 'orange'},
     ]
+
+    $timeout(function() {
+        vm.fruit.push({text: 'strawberry', value: 'strawberry'})
+    },3000)
 
 
     vm.tableData = [
