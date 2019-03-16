@@ -4,11 +4,11 @@ import datatables from 'angular-datatables'
 import angularAnimate from 'angular-animate'
 import angularTouch from 'angular-touch'
 import uiBootstrap from 'angular-ui-bootstrap'
-import './shellModule/shellModule.module'
+import shellModule from './shell/shell.module'
 
 // css
-import 'style-loader!css-loader!./angular-datatables.css'
-import 'style-loader!css-loader!./ui-bootstrap-csp.css'
+import css from './ui-bootstrap-csp.css'
+import styles from './angular-datatables.css'
 
 export default angular.module('app', [
     'ui.router',
@@ -18,6 +18,7 @@ export default angular.module('app', [
     'datatables',
     datatables,
     'shellModule',
+    shellModule.name,
     'ngAnimate',
     angularAnimate,
     'ngTouch',

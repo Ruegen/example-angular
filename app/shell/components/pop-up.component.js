@@ -1,4 +1,4 @@
-import template from "html-loader!./pop-up.component.html";
+import template from "./pop-up.component.html";
 
 export const popUp = {
   template: template,

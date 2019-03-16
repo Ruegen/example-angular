@@ -15,9 +15,10 @@ module.exports = function(config) {
     frameworks: ['jasmine'],
 
     preprocessors: {
-      'app/index.module.spec.js': ['webpack'],
-      'app/shellModule/shellModule.module.spec.js': ['webpack'],
-      'app/shellModule/components/drop-down.component.spec.js': ['webpack'],
+      'app/**/*.js': ['webpack'],
+      // 'app/index.module.spec.js': ['webpack'],
+      // 'app/shellModule/shellModule.module.spec.js': ['webpack'],
+      // 'app/shellModule/components/drop-down.component.spec.js': ['webpack'],
       // 'app/shellModule/components/pop-up.component.spec.js': ['webpack']
     },
 
@@ -30,7 +31,7 @@ module.exports = function(config) {
       'app/index.module.spec.js',
       'app/shellModule/shellModule.module.spec.js',
       'app/shellModule/components/drop-down.component.spec.js',
-      // 'app/shellModule/components/pop-up.component.spec.js'
+      'app/shellModule/components/pop-up.component.spec.js'
     ],
 
 
@@ -63,7 +64,9 @@ module.exports = function(config) {
             },
             {
               test: /\.css$/,
-              use: ['style-loader', 'css-loader'],
+              use: [
+                'style-loader', 'css-loader'
+              ],
             },
           ]
         },

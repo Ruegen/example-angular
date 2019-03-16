@@ -1,5 +1,5 @@
 import shellController from './controllers/list.controller'
-import {dropDown} from './components/drop-down.component'
+import { dropDown } from './components/drop-down.component'
 import { popUp } from './components/pop-up.component';
 
 export default angular.module('shellModule', [])
