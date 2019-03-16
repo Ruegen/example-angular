@@ -1,5 +1,5 @@
 
-import template from 'html-loader!./drop-down.component.html'
+import template from './drop-down.component.html'
 
 export const dropDown = {
     template: template,
